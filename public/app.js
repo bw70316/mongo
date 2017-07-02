@@ -30,11 +30,11 @@ $(document).on("click", "p", function() {
       $("#comments").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
       // If there's a note in the article
-      if (data.note) {
+      if (data.comments) {
         // Place the title of the note in the title input
-        $("#titleinput").val(data.note.headline);
+        $("#titleinput").val(data.comments.headline);
         // Place the body of the note in the body textarea
-        $("#bodyinput").val(data.note.body);
+        $("#bodyinput").val(data.comments.body);
       }
     });
 });
@@ -59,7 +59,7 @@ $(document).on("click", "#savenote", function() {
       // Log the response
       console.log(data);
       // Empty the notes section
-      $("#notes").empty();
+      $("#comments").empty();
     });
 
   // Also, remove the values entered in the input and textarea for note entry
