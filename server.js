@@ -20,7 +20,7 @@ app.use(express.static("public"));
 
 
 
-mongoose.connect("mongodb://localhost/scraper")
+mongoose.connect("mongodb://heroku_fwqzzsw1:t6f8ieflnramf6lepd9ou9jdln@ds035846.mlab.com:35846/heroku_fwqzzsw1")
 var db = mongoose.connection;
 
 
