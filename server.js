@@ -21,7 +21,7 @@ var PORT = process.env.PORT || 3000;
 // uristring sets connection address to the env variable, if it exists, else it uses local connection
 var uristring =
     process.env.MONGODB_URI ||
-    'mongodb://localhost/newsbucket';
+    'mongodb://heroku_fwqzzsw1:t6f8ieflnramf6lepd9ou9jdln@ds035846.mlab.com:35846/heroku_fwqzzsw1';
 
 // use the var uristring here instead of the full MONGODB_URI
 mongoose.connect(uristring);
