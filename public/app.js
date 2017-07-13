@@ -23,11 +23,13 @@ $(document).on("click", "p", function() {
       // The title of the article
       $("#comments").append("<h2>" + data.headline + "</h2>");
       // An input to enter a new title
-      $("#comments").append("<input id='titleinput' name='title' >");
+      $("#comments").append("<input id='titleinput' name='headline' >");
       // A textarea to add a new note body
       $("#comments").append("<textarea id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
       $("#comments").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      
+      $("#comments").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
 
       // If there's a note in the article
       if (data.comments) {
@@ -38,6 +40,8 @@ $(document).on("click", "p", function() {
       }
     });
 });
+
+
 
 $(document).on("click", "#savenote", function() {
   // Grab the id associated with the article from the submit button
@@ -62,7 +66,36 @@ $(document).on("click", "#savenote", function() {
       $("#comments").empty();
     });
 
-  // Also, remove the values entered in the input and textarea for note entry
+
+
+
+
+
+$(document).on("click", "#deletenote", function() {
+
+  // Grab the id associated with the article from the submit button
+  var thisId = $(this).attr("data-id");
+
+  // Run a DELETE request to delete the comment, using what's entered in the inputs
+  $.ajax({
+    method: "DELETE",
+    url: "/articles/" + thisId,
+    data: {
+      // Value taken from title input
+      headline: $("#titleinput").val(""),
+      // Value taken from note textarea
+      body: $("#bodyinput").val("")
+    }
+  })
+    // With that done
+    .done(function(data) {
+      // Log the response
+      console.log(data);
+      
+    $("#comments").empty();
+    });
+  });
+
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
