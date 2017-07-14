@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var cheerio = require("cheerio");
 var request = require("request");
 
-var Comments = require("./models/Comments.js");
+var Comments = require("./models/comments.js");
 var Article = require("./models/Article.js")
 
 var app = express();
