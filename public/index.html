@@ -2,24 +2,75 @@
 <html lang="en-us">
   	<head>
     	<meta charset="UTF-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     	<title>Scraping Sports</title>
+
        <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
+      body { background-color: #b2b59d }
+      /*#wrapper {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 5%;
+      }*/
+
+      h2 {
+        font-family: 'Georgia', Times, Times New Roman, serif;
+        color: lightgreen;
+
       }
+
+      sup {
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
       #articles {
         display: inline-block;
         overflow: auto;
         width: 60%;
         height: 700px;
+        border-style: groove;
+        border-radius: 20px;
+        border-color: darkred;
+        margin:20px;
+            padding-right: 2px
+        padding: 15px;
       }
-      #notes {
+     /* #notes {
         float: right;
         width: 30%;
+      }*/
+      .jumbotron{
+            text-align: center;
+            color: darkblue;
+            margin-top: 80px;
+            background-color: lightgreen;
+            font-family: 'Georgia', Times, Times New Roman, serif;
+            border-style: groove;
+            border-radius: 20px;
+            border-color: darkblue;
+
+      }
+    
+/*    p {
+      color:blue;
+    }*/
+
+    p  {
+      color: blue;
+      font-weight:bold;
+      font-size: 18px;
+     font-family: 'Georgia', Times, Times New Roman, serif;
+
+    }
+
+    p:visited {
+      color:red;
+    }
+
+      button {
+        color: blue;
       }
       textarea, input {
         display: block;
@@ -34,14 +85,70 @@
         height: 200px;
         font-size: 18px;
       }
+
+      h3{
+            font-family: 'Georgia', Times, Times New Roman, serif;
+            color: lightblue;
+            font-weight: bold;
+            margin-top: 30px;
+
+
+      }
+      #savenote {
+        margin-top: 5px;
+        color: black;
+      }
+
+      #titleinput {
+        background: lightyellow;
+        margin-bottom: 5px;
+        color: black;
+        border-style:groove;
+        border-radius: 10px;
+        border-color: black;
+      }
+
+      textarea{
+        background-color: lightyellow;
+        color: black;
+        border-color: black;
+        border-radius: 10px;
+      }
+
+      #deletenote{
+        margin-left: 15px;
+        margin-top:5px;
+        float: right;
+        color:black;
+      }
+
+    #jumbo {
+      color: darkblue;
+    }
+
     </style>
  	<head>
   <body>
-  `<div id="wrapper">
-      <h1>Welcome to the ESPN Sports Section</h1>
-      <div id="articles"></div>
-      <div id="comments"></div>
-     </div>
+  <div class="container">
+  
+    <div class="jumbotron">
+  <h1>Welcome to The Onion&#8482 Politics</h1>
+  <h2 id="jumbo">We Welcome Hilarious Comments Only</h2>
+  
+</div>
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+     <div id="articles"></div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+  <h3>Click an article to add a comment!!<h3>
+  <div id="comments"></div>
+
+</div>
+</div>
+  
+  </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="app.js"></script>
   </body>

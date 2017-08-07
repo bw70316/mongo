@@ -23,9 +23,9 @@ $(document).on("click", "p", function() {
       // The title of the article
       $("#comments").append("<h2>" + data.headline + "</h2>");
       // An input to enter a new title
-      $("#comments").append("<input id='titleinput' name='headline' >");
+      $("#comments").append("<input id='titleinput' name='headline' placeholder='Title'>");
       // A textarea to add a new note body
-      $("#comments").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#comments").append("<textarea id='bodyinput' name='body' placeholder='add comment here'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
       $("#comments").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
       
@@ -78,19 +78,17 @@ $(document).on("click", "#deletenote", function() {
 
   // Run a DELETE request to delete the comment, using what's entered in the inputs
   $.ajax({
-    method: "DELETE",
+    method: "POST",
     url: "/articles/" + thisId,
     data: {
       // Value taken from title input
-      headline: $("#titleinput").val(""),
-      // Value taken from note textarea
-      body: $("#bodyinput").val("")
+      'action': 'delete'
     }
   })
     // With that done
     .done(function(data) {
       // Log the response
-      console.log(data);
+      console.log(thisId);
       
     $("#comments").empty();
     });

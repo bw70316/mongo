@@ -6,12 +6,12 @@ var ArticleSchema = new Schema ({
 
 	headline: {
 		type: String,
-		required: true
+		required: false
 	},
 
 	link: {
 		type: String,
-		required: true
+		required: false
 	},
 
 	comments: {

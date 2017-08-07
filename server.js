@@ -18,9 +18,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
+mongoose.connect("mongodb://localhost/scrape")
 
-
-mongoose.connect("mongodb://heroku_bbz9x4c0:5cvi0t2uep4fqj7q8m5fc4pbjj@ds157682.mlab.com:57682/heroku_bbz9x4c0")
+// mongoose.connect("mongodb://heroku_bbz9x4c0:5cvi0t2uep4fqj7q8m5fc4pbjj@ds157682.mlab.com:57682/heroku_bbz9x4c0")
 var db = mongoose.connection;
 
 
@@ -38,7 +38,7 @@ db.once("open", function() {
 
 app.get("/scrape", function(req, res) {
 
-  request("http://www.echojs.com", function(error, response, html) {
+  request("http://www.theonion.com/section/politics/", function(error, response, html) {
     
     var $ = cheerio.load(html);
     
@@ -62,6 +62,7 @@ app.get("/scrape", function(req, res) {
         }
   
         else {
+
           console.log(doc);
         }
       });
