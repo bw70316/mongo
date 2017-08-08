@@ -17,7 +17,9 @@
       h2 {
         font-family: 'Georgia', Times, Times New Roman, serif;
         color: lightgreen;
-     border-bottom: 6px solid black;
+     border-bottom: 4px solid black;
+     border-bottom-style: dotted;
+     
      margin-bottom: 5px;
 
 
@@ -110,6 +112,12 @@
 
 
       }
+
+      #click{
+        color: darkblue;
+        text-shadow: -1px 0 lightgreen, 0 1px lightgreen, 1px 0 lightgreen, 0 -1px lightgreen;
+      }
+
       #savenote {
         margin-top: 5px;
         color: black;
@@ -119,6 +127,7 @@
         background: lightyellow;
         margin-bottom: 5px;
         color: black;
+        margin-top: 20px;
         border-style:groove;
         border-radius: 10px;
         border-color: black;
@@ -162,7 +171,7 @@
      <div id="articles"></div>
   </div>
   <div class="col-xs-6 col-md-4">
-  <h3>Click an article to add a comment!!<h3>
+  <h3 id="click">Click an article to add a comment below!!<h3>
   <div id="comments"></div>
 
 </div>
