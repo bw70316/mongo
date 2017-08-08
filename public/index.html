@@ -3,7 +3,7 @@
   	<head>
     	<meta charset="UTF-8">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    	<title>Scraping Sports</title>
+    	<title>Scraping the Onion</title>
 
        <style>
       body { background-color: #b2b59d }
@@ -17,6 +17,9 @@
       h2 {
         font-family: 'Georgia', Times, Times New Roman, serif;
         color: lightgreen;
+     border-bottom: 6px solid black;
+     margin-bottom: 5px;
+
 
       }
 
@@ -26,16 +29,17 @@
       }
 
       #articles {
+
         display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-        border-style: groove;
-        border-radius: 20px;
-        border-color: darkred;
-        margin:20px;
-            padding-right: 2px
-        padding: 15px;
+    overflow: auto;
+    width: 60%;
+    padding: 10px;
+    background-color: lightblue;
+    /* height: 700px; */
+   
+    border-radius: 20px;
+    border-color: black
+    margin: 20px;
       }
      /* #notes {
         float: right;
@@ -61,29 +65,41 @@
       color: blue;
       font-weight:bold;
       font-size: 18px;
+      border-color: black;
+      border-style: groove;
+
      font-family: 'Georgia', Times, Times New Roman, serif;
 
     }
 
-    p:visited {
-      color:red;
+
+
+    p:hover{
+      background-color: lightpink;
     }
 
       button {
         color: blue;
       }
-      textarea, input {
+      /*textarea, input {
         display: block;
         width: 100%;
         background-color: #FCF5C7;
-      }
+
+      }*/
       input {
         height: 36px;
         font-size: 24px;
+        width: 363px;
       }
       textarea {
         height: 200px;
+        width: 363px;
         font-size: 18px;
+        border-color:black;
+        border-size:4px;
+        border-style: groove;
+        border-radius: 10px;
       }
 
       h3{
@@ -126,6 +142,10 @@
       color: darkblue;
     }
 
+    h5 {
+      font-size: 40px;
+    }
+
     </style>
  	<head>
   <body>
@@ -133,7 +153,7 @@
   
     <div class="jumbotron">
   <h1>Welcome to The Onion&#8482 Politics</h1>
-  <h2 id="jumbo">We Welcome Hilarious Comments Only</h2>
+  <h5>We Welcome Hilarious Comments Only</h5>
   
 </div>
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->

@@ -18,9 +18,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-// mongoose.connect("mongodb://localhost/scrape")
+mongoose.connect("mongodb://localhost/scrape")
 
-mongoose.connect("mongodb://heroku_bbz9x4c0:5cvi0t2uep4fqj7q8m5fc4pbjj@ds157682.mlab.com:57682/heroku_bbz9x4c0")
+// mongoose.connect("mongodb://heroku_bbz9x4c0:5cvi0t2uep4fqj7q8m5fc4pbjj@ds157682.mlab.com:57682/heroku_bbz9x4c0")
 var db = mongoose.connection;
 
 
