@@ -38,11 +38,11 @@ db.once("open", function() {
 
 app.get("/scrape", function(req, res) {
 
-  request("http://www.theonion.com/section/politics/", function(error, response, html) {
+  request("http://www.theonion.com/section/politics/", function(err, response, body) {
     
-    var $ = cheerio.load(html);
+    var $ = cheerio.load(body);
     
-    $("article h2").each(function(i, element) {
+    $("article header h2").each(function(i, element) {
 
       var result = {};
 
